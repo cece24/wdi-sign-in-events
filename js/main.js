@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
   button.addEventListener('click', function() {
     modal.style.display = "unset";
 
-    submitButton.addEventListener('click', function() {
+    submitButton.addEventListener('click', function(e) {
+      e.stopPropagation();
+
       inputUser.classList.add('error');
       inputPass.classList.add('error');
 
@@ -25,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     close.addEventListener('click', function() {
+      modal.style.display = "none";
+    })
+
+    modal.addEventListener('click', function() {
       modal.style.display = "none";
     })
 
