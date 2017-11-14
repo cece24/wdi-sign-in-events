@@ -20,14 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
         input.classList.add('error');
       })
 
-      inputs[0].addEventListener('mouseover', function() {
-        inputs[0].classList.remove('error');
+      inputs.forEach(function(input) {
+        input.addEventListener('mouseover', function() {
+          input.classList.remove('error');
+        })
       })
-
-      inputs[1].addEventListener('mouseover', function() {
-        inputs[1].classList.remove('error');
-      })
-
+      
     })
 
 
