@@ -12,7 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
     submitButton.addEventListener('click', function() {
       inputUser.classList.add('error');
       inputPass.classList.add('error');
+
+      inputUser.addEventListener('mouseover', function() {
+        inputUser.classList.remove('error');
+      })
+
+      inputPass.addEventListener('mouseover', function() {
+        inputPass.classList.remove('error');
+      })
+
     })
+
 
     close.addEventListener('click', function() {
       modal.style.display = "none";
