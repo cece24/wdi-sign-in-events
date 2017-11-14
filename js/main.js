@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var button = document.querySelector('.signin');
   var modal = document.querySelector('.modal');
   var close = document.querySelector('.close');
-  var inputUser = document.querySelector('#user');
-  var inputPass = document.querySelector('#pass');
+  // var inputUser = document.querySelector('#user');
+  // var inputPass = document.querySelector('#pass');
+  var inputs = document.querySelectorAll('input[name]');
   var submitButton = document.querySelector('.submit');
 
   button.addEventListener('click', function() {
@@ -12,15 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
     submitButton.addEventListener('click', function(e) {
       e.stopPropagation();
 
-      inputUser.classList.add('error');
-      inputPass.classList.add('error');
+      // inputUser.classList.add('error');
+      // inputPass.classList.add('error');
 
-      inputUser.addEventListener('mouseover', function() {
-        inputUser.classList.remove('error');
+      inputs.forEach(function(input) {
+        input.classList.add('error');
       })
 
-      inputPass.addEventListener('mouseover', function() {
-        inputPass.classList.remove('error');
+      inputs[0].addEventListener('mouseover', function() {
+        inputs[0].classList.remove('error');
+      })
+
+      inputs[1].addEventListener('mouseover', function() {
+        inputs[1].classList.remove('error');
       })
 
     })
@@ -34,9 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.style.display = "none";
     })
 
-
   })
-
-
 
 });
